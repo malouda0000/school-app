@@ -2,9 +2,12 @@ import 'package:dash_school/core/constants/app_colors.dart';
 import 'package:dash_school/core/constants/app_images.dart';
 import 'package:dash_school/core/constants/constans.dart';
 import 'package:dash_school/core/themes/my_themes.dart';
+import 'package:dash_school/get_pages.dart';
 import 'package:dash_school/view/screens/home/home_body.dart';
+import 'package:dash_school/view/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // SharedPreferences mySharedPrefes = SharedPreferences.getIn
@@ -17,11 +20,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'مدرسة داش',
       theme: MyThemes.customLightTheme,
       // themeMode: ,
+      getPages: MyGetPages().getpages,
+
       home: const MainScreen(),
     );
   }
@@ -33,17 +38,9 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
+      drawer: const Drawer(
         child: SingleChildScrollView(
-          child: Column(children: const [
-            UserAccountsDrawerHeader(
-                accountName: Text(
-                  'انس حسن',
-                ),
-                accountEmail: Text(
-                  "الصف الرابع",
-                ))
-          ]),
+          child: DrawerBody(),
         ),
       ),
       appBar: AppBar(

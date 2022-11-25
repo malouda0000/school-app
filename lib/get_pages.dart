@@ -38,7 +38,7 @@ class AppRoute {
   static const String errorMessageScreen = '/errorMessageScreen';
 }
 
-class GetPages {
+class MyGetPages {
   // initaling app
   List<GetPage<dynamic>>? getpages = [
     GetPage(
