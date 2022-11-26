@@ -231,7 +231,7 @@ class _DrawerListTile extends StatelessWidget {
         theTitle,
         style: const TextStyle(
           color: AppColor.kPrimaryColor,
-          fontSize: 20,
+          fontSize: 15,
           fontWeight: FontWeight.bold,
         ),
       ),

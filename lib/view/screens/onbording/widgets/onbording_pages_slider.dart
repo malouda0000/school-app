@@ -1,4 +1,5 @@
 import 'package:dash_school/controllers/custom_onbording_controller.dart';
+import 'package:dash_school/core/constants/app_colors.dart';
 import 'package:dash_school/view/screens/onbording/widgets/onbording_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,6 +43,7 @@ class OnBordingPageSlider extends GetView<OnBordingControllerImp> {
                     // color: Colors.white,
                     fontSize: 35,
                     fontWeight: FontWeight.bold,
+                    color: AppColor.kPrimaryColor,
                   ),
                 ),
               ),
@@ -60,6 +62,7 @@ class OnBordingPageSlider extends GetView<OnBordingControllerImp> {
                   style: const TextStyle(
                     fontSize: 14,
                     height: 1.5,
+                    color: AppColor.kPrimaryColor,
                   ),
                 ),
               ),

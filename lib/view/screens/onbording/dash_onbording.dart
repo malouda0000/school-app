@@ -40,7 +40,7 @@ class DashOnbording extends StatelessWidget {
                 _NextButton(),
               ],
             ),
-          )
+          ),
         ],
       ),
     );

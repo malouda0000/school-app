@@ -28,7 +28,8 @@ class MyApp extends StatelessWidget {
       // themeMode: ,
       getPages: MyGetPages().getpages,
 
-      home: const MainScreen(),
+      // home: const MainScreen(),
+      home: const DashOnbording(),
     );
   }
 }
@@ -75,8 +76,8 @@ class MainScreen extends StatelessWidget {
           emptySpace,
         ],
       ),
-      // body: const HomeBody(),
-      body: const DashOnbording(),
+      body: const HomeBody(),
+      // body: const DashOnbording(),
     );
   }
 }
