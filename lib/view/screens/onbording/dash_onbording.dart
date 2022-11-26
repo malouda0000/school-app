@@ -1,7 +1,7 @@
 import 'package:dash_school/core/constants/app_colors.dart';
 import 'package:dash_school/main.dart';
-import 'package:dash_school/view/screens/onbording/widgets/dash_sliding.dart';
-import 'package:dash_school/view/screens/onbording/widgets/dash_slidling_controller.dart';
+import 'package:dash_school/view/screens/onbording/widgets/onbording_data.dart';
+import 'package:dash_school/view/screens/onbording/widgets/onbording_pages_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +27,7 @@ class DashOnbording extends StatelessWidget {
               ),
               Expanded(
                 // flex: 1,
-                child: SlidingController(),
+                child: _SlidingDots(),
               )
             ],
           ),
@@ -114,6 +114,52 @@ class _SkipButton extends GetView<OnBordingControllerImp> {
           Get.offAll(const MainScreen());
         },
       ),
+    );
+  }
+}
+
+class _SlidingDots extends StatelessWidget {
+  const _SlidingDots({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        GetBuilder<OnBordingControllerImp>(
+          builder: (controller) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ...List.generate(
+                  dashONbordingList.length,
+                  (index) {
+                    return AnimatedContainer(
+                      duration: const Duration(
+                        milliseconds: 900,
+                      ),
+                      width: controller.currentPage == index ? 35 : 12,
+                      height: 6,
+                      margin: const EdgeInsets.all(
+                        // theDefaultPadding,
+
+                        2,
+                      ),
+                      decoration: BoxDecoration(
+                          color: AppColor.kPrimaryColor,
+                          // shape: BoxShape.circle,
+                          borderRadius: BorderRadius.circular(15)),
+                    );
+                  },
+                ),
+              ],
+            );
+          },
+        ),
+      ],
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:dash_school/main.dart';
+import 'package:dash_school/get_pages.dart';
 import 'package:dash_school/view/screens/onbording/widgets/onbording_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
@@ -19,7 +19,9 @@ class OnBordingControllerImp extends CustomOnBordingController {
   next() {
     currentPage++;
     if (currentPage >= dashONbordingList.length) {
-      Get.offAll(const MainScreen());
+      Get.offAllNamed(
+        AppRoute.mainScreen,
+      );
     } else {
       pageController.animateToPage(currentPage,
           duration: const Duration(milliseconds: 900), curve: Curves.easeInOut);
@@ -28,7 +30,9 @@ class OnBordingControllerImp extends CustomOnBordingController {
 
   @override
   skip() {
-    Get.offAll(const MainScreen());
+    Get.offAllNamed(
+      AppRoute.mainScreen,
+    );
 
     update();
   }

@@ -4,6 +4,7 @@ import 'package:dash_school/core/constants/constans.dart';
 import 'package:dash_school/core/themes/my_themes.dart';
 import 'package:dash_school/get_pages.dart';
 import 'package:dash_school/view/screens/home/home_body.dart';
+import 'package:dash_school/view/screens/onbording/dash_onbording.dart';
 import 'package:dash_school/view/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -74,7 +75,8 @@ class MainScreen extends StatelessWidget {
           emptySpace,
         ],
       ),
-      body: const HomeBody(),
+      // body: const HomeBody(),
+      body: const DashOnbording(),
     );
   }
 }
