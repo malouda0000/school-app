@@ -35,11 +35,13 @@ class MyApp extends StatelessWidget {
 }
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  MainScreen({super.key});
+  final GlobalKey<ScaffoldState> mainScaffoldKey = GlobalKey(); // Create a key
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: mainScaffoldKey,
       drawer: const Drawer(
         child: SingleChildScrollView(
           child: DrawerBody(),
@@ -51,7 +53,8 @@ class MainScreen extends StatelessWidget {
         leading: Builder(builder: (context) {
           return IconButton(
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              // Scaffold.of(context).openDrawer();
+              mainScaffoldKey.currentState!.openDrawer();
             },
             icon: const Icon(
               Icons.menu_rounded,

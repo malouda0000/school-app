@@ -95,7 +95,7 @@ class MyGetPages {
 //     // main screens
     GetPage(
       name: AppRoute.mainScreen,
-      page: () => const MainScreen(),
+      page: () => MainScreen(),
       // binding: LocalizationBindings(),
     ),
 //     GetPage(
